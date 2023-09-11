@@ -15,8 +15,4 @@ public class HomeServlet extends HttpServlet {
         request.getRequestDispatcher("home.html").forward(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        // Implemente o tratamento de solicitações POST, se necessário
-    }
 }
