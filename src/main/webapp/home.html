@@ -13,22 +13,37 @@ body {
     align-items: center;
     height: 100vh; 
     margin: 0;
+    background-color: rgb(248, 241, 232);
 }
 
 .center-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top:30vh;
-    gap: 10vh;
+    height: 100%;
     text-align: justify;
+}
+.navbar{
+    background-color: antiquewhite;
+    color: black;
+}
+
+.navbar-nav a.nav-item.nav-link {
+    color: black;
+}
+
+.card {
+    width: 18rem;
+    border-radius: 10px;
+    margin: 10px;
 }
 </style>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">PetMobilis</a>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand">PetMobilis</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,25 +60,31 @@ body {
     </nav>
 
     <div class="center-container">
-        <div class="card" style="width: 18rem; border-radius: 10px;">
-            <div class="card-body">
-                <h5 class="card-title">Funcionalidade 1</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Solicitar viagens a qualque momento</h6>
-                <p class="card-text">O nosso aplicativo possibilita a solicitação de uma viagem para você e para o seu pet em qualquer hora do dia</p>
-            </div>
+        <div class="col-md-10 col-lg-6 col-xl-5 d-flex align-items-center justify-content-center order-1 order-lg-2">
+            <img src="\imagens\PET_LOGO.png" class="img-fluid" alt="Sample image" style="max-width: 50%;">
         </div>
-        <div class="card" style="width: 18rem; border-radius: 10px;">
-            <div class="card-body">
-                <h5 class="card-title">Funcionalidade 2</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Acompanhar trajeto</h6>
-                <p class="card-text">Ao solicitar uma viagem, você terá acesso às informações sobre o motorista e o carro, por exemplo nome e placa, além do trajeto que será percorrido</p>
+
+        <div class="d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Funcionalidade 1</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Solicitar viagens a qualquer momento</h6>
+                    <p class="card-text">O nosso aplicativo possibilita a solicitação de uma viagem para você e para o seu pet em qualquer hora do dia</p>
+                </div>
             </div>
-        </div>
-        <div class="card" style="width: 18rem; border-radius: 10px;">
-            <div class="card-body">
-                <h5 class="card-title">Funcionalidade 3</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Escolher forma de pagamento</h6>
-                <p class="card-text">O nosso aplicativo permite que você, ao solicitar uma viagem, escolha qual a melhor forma de pagamento para você, tendo as opções: cartão ou dinheiro</p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Funcionalidade 2</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Acompanhar trajeto</h6>
+                    <p class="card-text">Ao solicitar uma viagem, você terá acesso às informações sobre o motorista e o carro, por exemplo nome e placa, além do trajeto que será percorrido</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Funcionalidade 3</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Escolher forma de pagamento</h6>
+                    <p class="card-text">O nosso aplicativo permite que você, ao solicitar uma viagem, escolha qual a melhor forma de pagamento para você, tendo as opções: cartão ou dinheiro</p>
+                </div>
             </div>
         </div>
     </div>
