@@ -13,7 +13,7 @@ body {
     align-items: center;
     height: 100vh; 
     margin: 0;
-    background-color: rgb(248, 241, 232);
+    background-color:#A9B388;
 }
 
 .center-container {
@@ -25,69 +25,94 @@ body {
     text-align: justify;
 }
 .navbar{
-    background-color: antiquewhite;
-    color: black;
+    background-color: #5F6F52;
+    color: rgb(255, 255, 255);
 }
 
 .navbar-nav a.nav-item.nav-link {
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .card {
-    width: 18rem;
+    width: 20rem;
     border-radius: 10px;
     margin: 10px;
 }
+
+#item{
+    margin-left: 45rem;
+}
+
+.navbar-toggler{
+    margin-left: 10.2rem;
+}
+
+@media screen and (max-width: 600px){
+          #item{
+            margin-left: 0;
+          }
+        }
+
 </style>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand">PetMobilis</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link " href="contato.html">Contato <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link " href="termosDeServico.html">Termos de Serviço</a>
-            </div>
-        </div>
-        <div class="navbar-nav ml-auto"> 
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" id="item" href="contato.html"> Contato </a>
+            <a class="nav-item nav-link active" href="termosDeServico.html">Termos de Serviço</a>
             <a class="nav-item nav-link active" href="login.html">Login</a>
             <a class="nav-item nav-link active" href="cadastro.html">Cadastrar</a>
+            
+          </div>
         </div>
+
+        <div class="navbar-nav ml-auto text-dark"> 
+            
+        </div>
+      </nav>
+        
     </nav>
 
     <div class="center-container">
         <div class="col-md-10 col-lg-6 col-xl-5 d-flex align-items-center justify-content-center order-1 order-lg-2">
-            <img src="imagens\PET_LOGO.png" class="img-fluid" alt="Sample image" style="max-width: 50%;">
+            <img src="imagens\logo.png" class="img-fluid" alt="Sample image" style="max-width: 60%;">
         </div>
 
-        <div class="d-flex justify-content-center">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Funcionalidade 1</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Solicitar viagens a qualquer momento</h6>
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-4 col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title h6">Solicitar viagens para você e seu pet a qualquer momento</h5>
                     <p class="card-text">O nosso aplicativo possibilita a solicitação de uma viagem para você e para o seu pet em qualquer hora do dia</p>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Funcionalidade 2</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Acompanhar trajeto</h6>
+              </div>
+              <div class="col-md-4 col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title h6">Acompanhar trajeto</h5>
                     <p class="card-text">Ao solicitar uma viagem, você terá acesso às informações sobre o motorista e o carro, por exemplo nome e placa, além do trajeto que será percorrido</p>
+                  </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Funcionalidade 3</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Escolher forma de pagamento</h6>
+              </div>
+              <div class="col-md-4 col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title h6">Escolher forma de pagamento</h5>
                     <p class="card-text">O nosso aplicativo permite que você, ao solicitar uma viagem, escolha qual a melhor forma de pagamento para você, tendo as opções: cartão ou dinheiro</p>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
+          
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" giintegrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
