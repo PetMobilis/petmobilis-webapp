@@ -48,8 +48,8 @@ public class CadastroServlet extends HttpServlet {
             erros.add("Senha deve ter no mínimo 6 e no máximo 20 caracteres");
         }
 
-        if (senha != null && (senha.length() < 1 || senha.length() > 50)) {
-            erros.add("Nome atingiu o tamanho máximo");
+        if (nome != null && (nome.length() < 3 || nome.length() > 50)) {
+            erros.add("Nome deve ter no mínimo 3 e no máximo 50 caracteres");
         }
         
         if (senha != null) {

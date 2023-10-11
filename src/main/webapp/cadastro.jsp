@@ -72,21 +72,21 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input name="nome" type="text" id="nome" class="form-control" placeholder="Nome" value="nome"/>
+                            <input name="nome" type="text" id="nome" class="form-control" placeholder="Nome" value="${nome}"/>
                           </div>
                         </div>
       
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input name="email" type="email" id="email" class="form-control" placeholder="E-mail" value="email"/>
+                            <input name="email" type="text" id="email" class="form-control" placeholder="E-mail" value="${email}"/>
                           </div>
                         </div>
       
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="senha"/>
+                            <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="${senha}"/>
                           </div>
                         </div>
       
