@@ -81,13 +81,13 @@ public class CadastroServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("principal.jsp");
+            res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
             req.setAttribute("erros", erros);
-            req.getRequestDispatcher("login.jsp").forward(req, res);
+            req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
     } 
     }
