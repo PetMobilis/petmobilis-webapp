@@ -47,6 +47,15 @@
                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
       
                       <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-3">Login</p>
+
+                      <c:if test="${erros != null}">
+                      <h3>Erros no formulário</h2>
+                        <ul>
+                        <c:forEach var="erro" items="${erros}">
+                          <li>${erro}</li>
+                        </c:forEach>
+                        </ul>
+                        </c:if>
       
                       <form action="login" method="post" class="mx-1 mx-md-4 ">
       
