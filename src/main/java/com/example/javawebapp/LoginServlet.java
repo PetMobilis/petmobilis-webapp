@@ -46,38 +46,6 @@ public class LoginServlet extends HttpServlet {
             erros.add("E-mail inválido");
         }
 
-        if (senha != null && (senha.length() < 6 || senha.length() > 20)) {
-            erros.add("Senha deve ter no mínimo 6 e no máximo 20 caracteres");
-        }
-        
-        if (senha != null) {
-            boolean temLetraMinuscula = false;
-            boolean temLetraMaiuscula = false;
-            boolean temDigito = false;
-        
-            for (char c : senha.toCharArray()) {
-                if (Character.isLowerCase(c)) {
-                    temLetraMinuscula = true;
-                } else if (Character.isUpperCase(c)) {
-                    temLetraMaiuscula = true;
-                } else if (Character.isDigit(c)) {
-                    temDigito = true;
-                }
-            }
-
-            if (!temLetraMinuscula) {
-                erros.add("A Senha deve ter uma letra minúscula");
-            }
-
-            if (!temLetraMaiuscula) {
-                erros.add("A Senha deve ter uma letra maiúscula");
-            }
-
-            if (!temDigito) {
-                erros.add("A Senha deve ter um número");
-            }
-        }
-
         if (erros.isEmpty()) {
             res.sendRedirect("home.html");
         } else {
