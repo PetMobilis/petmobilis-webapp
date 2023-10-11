@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -62,14 +65,14 @@
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input name="email" type="email" id="email'" class="form-control" placeholder="E-mail" />
+                            <input name="email" type="email" id="email'" class="form-control" placeholder="E-mail" value="${email}" />
                           </div>
                         </div>
       
                         <div class="d-flex flex-row align-items-center mb-4">
                           <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div class="form-outline flex-fill mb-0">
-                            <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha"/>
+                            <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="${senha}"/>
                           </div>
                         </div>
                       <p class="text-center">

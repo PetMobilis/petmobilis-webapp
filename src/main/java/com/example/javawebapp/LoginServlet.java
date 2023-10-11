@@ -79,7 +79,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("principal.jsp");
+            res.sendRedirect("home.html");
         } else {
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
