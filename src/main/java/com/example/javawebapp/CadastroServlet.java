@@ -23,6 +23,7 @@ public class CadastroServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String nome = req.getParameter("nome");
+        String sobrenome = req.getParameter("sobrenome");
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
        
@@ -30,6 +31,10 @@ public class CadastroServlet extends HttpServlet {
         
         if (nome == null || nome.isBlank()) {
             erros.add("Nome deve ser preenchido");
+        }
+
+        if (sobrenome == null || sobrenome.isBlank()) {
+            erros.add("Sobrenome deve ser preenchido");
         }
 
         if (email == null || email.isEmpty()) {
@@ -49,6 +54,10 @@ public class CadastroServlet extends HttpServlet {
         }
 
         if (nome != null && (nome.length() < 3 || nome.length() > 50)) {
+            erros.add("Nome deve ter no mínimo 3 e no máximo 30 caracteres");
+        }
+
+        if (sobrenome != null && (sobrenome.length() < 3 || sobrenome.length() > 50)) {
             erros.add("Nome deve ter no mínimo 3 e no máximo 50 caracteres");
         }
         
@@ -84,6 +93,7 @@ public class CadastroServlet extends HttpServlet {
             res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
+            req.setAttribute("sobrenome", sobrenome);
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
             req.setAttribute("erros", erros);
