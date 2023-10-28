@@ -79,16 +79,16 @@ form{
       
                         <div class="row">
                             <div class="col">
-                              <input type="text" class="form-control" placeholder="Nome" value="nome">
+                              <input type="text" id="nome" class="form-control" placeholder="Nome" value="nome">
                             </div>
 
                             <div class="col">
-                              <input type="text" class="form-control" placeholder="Sobrenome" value="sobrenome">
+                              <input type="text" id="sobrenome" class="form-control" placeholder="Sobrenome" value="sobrenome">
                             </div>
                           </div>
                         
                         <div class="form-outline mb-4 mt-4">
-                          <input type="email" id="Email" class="form-control" placeholder="Email" value="email"/>
+                          <input type="email" id="email" class="form-control" placeholder="Email" value="email"/>
                         </div>
       
                         <div class="form-outline mb-2">
