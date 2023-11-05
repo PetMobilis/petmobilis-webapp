@@ -9,126 +9,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Cadastro</title>
-    <style>
-.gradient-custom-2 {
-/* fallback for old browsers */
-background: #fccb90;
+</head>
+<style>
+  .button-spacing {
+      margin-right: 50px; 
+  }
 
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, #5F6F52, #A9B388,);
+  body{
+    background-color:#5F6F52;
+  }
 
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, #5F6F52, #A9B388, #5F6F52);
-}
+  .btn{
+    background-color: #C4661F;
+    border: 0;
+  }
 
-@media (min-width: 768px) {
-.gradient-form {
-height: 100vh !important;
-}
-}
-@media (min-width: 769px) {
-.gradient-custom-2 {
-border-top-right-radius: .3rem;
-border-bottom-right-radius: .3rem;
-}
-}
+  .container{
+    margin-top: 4rem;
+  }
 
-@media screen and (max-width: 600px){
+  @media screen and (max-width: 600px){
 
-body{
-  align-items: center;
-}
-.container{
-  margin: 0;
-}
+    body{
+      align-items: center;
+    }
+    .container{
+      margin: 0;
+    }
 
-.img{
-  width: 50%;
-  align-items: center;
-  margin-bottom: 0;
-}
+    .img{
+      width: 50%;
+      align-items: center;
+      margin-bottom: 0;
+    }
 
-.text-center{
-  margin-top: -20;
-}
+    .text-center{
+      margin-top: -20;
+    }
+  }
 
-form{
-    align-items: center;
-    margin-right: 15px;
-    
-}
-
-}
-
-    </style>
+</style>
 </head>
 <body>
-  
-    <section class="h-100 gradient-form" style="background-color: #eee;">
-        <div class="container py-5 h-50">
+ 
+        <div class="container h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-xl-10">
-              <div class="card rounded-3 text-black">
-                <div class="row g-0">
-                  <div class="col-lg-6">
-                    <div class="card-body mx-md-1 ml-4">
-      
-      
-                      <form>
-                        <p style="margin-bottom: 30px; margin-top:20px; text-align: center; font-size: 30px">Crie seu cadastro</p>
-      
-                        <div class="row">
-                            <div class="col">
-                              <input type="text" id="nome" class="form-control" placeholder="Nome" value="nome">
-                            </div>
+            <div class="col-lg-12 col-xl-11">
+                <div class="card text-black" style="border-radius: 25px;background-color: #F9eBC7; border-color: #783D19;">
+                <div class="card-body p-md-5">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                            <div class="col">
-                              <input type="text" id="sobrenome" class="form-control" placeholder="Sobrenome" value="sobrenome">
-                            </div>
+                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4">Cadastro</p>
+
+                      <c:if test="${erros != null}">
+                      <h3>Erros no formulário</h2>
+                        <ul>
+                        <c:forEach var="erro" items="${erros}">
+                          <li>${erro}</li>
+                        </c:forEach>
+                        </ul>
+                        </c:if>
+                        
+                      <form class="mx-1 mx-md-4" action="cadastro" method="post">
+
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input name="nome" type="text" id="nome" class="form-control" placeholder="Nome" value="${nome}"/>
                           </div>
-                        
-                        <div class="form-outline mb-4 mt-4">
-                          <input type="email" id="email" class="form-control" placeholder="Email" value="email"/>
                         </div>
       
-                        <div class="form-outline mb-2">
-                          <input type="password" id="senha" class="form-control" placeholder="Senha" value="senha"/>
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input name="email" type="email" id="email" class="form-control" placeholder="E-mail" value="${email}"/>
+                          </div>
                         </div>
-                        
-                        
-                            <li style="font-size: 12px; margin-bottom: 30px;">A senha deve possuir pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere</li>
-                        
+      
+                        <div class="d-flex flex-row align-items-center mb-4">
+                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <div class="form-outline flex-fill mb-0">
+                            <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="${senha}"/>
+                          </div>
+                        </div>
 
-                        <p style="font-size: 12px;">Ao clicar em Registrar-se, você aceita nosso <a href="termosDeServico.html">Termos de Serviço</a></p>
-      
-                        <div class="text-center">
-
-                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4 " type="submit">Registrar-se</button>
-                          <a href="login.html"><button type="button" class="btn">Ir para tela de login</button></a>
+                        <div class="d-flex flex-row align-items-center mb-3">
+                          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                         
                         </div>
-    
-      
+                                Ao clicar em Registrar-se, você aceita nosso <a href="termosDeServico.html">Termos de serviço</a>
+                                <br>
+                            </label>
+                        <br>
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <button type="submit" class="btn btn-primary btn-lg">Registrar-se</button>
+                        </div>
                       </form>
-      
-                    </div>
+
+                    </div>>
+                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center justify-content-center order-1 order-lg-2">
+                      <img src="imagens\logo.png"
+                           class="img-fluid" alt="Sample image" style="width: 80%;" />
                   </div>
-                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2 cor">
-                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-
-                      <div class="text-center">
-                        <img src="imagens/logo.png"
-                          style="width: 300px" alt="logo" >
-                      </div>
-
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        
       </section>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
