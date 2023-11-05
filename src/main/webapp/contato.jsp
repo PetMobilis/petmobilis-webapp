@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,23 +44,31 @@ border-bottom-right-radius: .3rem;
                   <div class="col-lg-6">
                     <div class="card-body mx-md-1 ml-4">
       
-      
-                      <form>
+                      <c:if test="${erros != null}">
+                        <h3>Erros no formulário</h2>
+                          <ul>
+                          <c:forEach var="erro" items="${erros}">
+                            <li>${erro}</li>
+                          </c:forEach>
+                        </ul>
+                      </c:if>
+
+                      <form action="contato" method="post">
                         <p style="text-align: center; font-size: 25px" class="mensag mt-4 mb-4">Entre em contato conosco</p>
-                               
+                        
                         <div class="form-outline mb-4">
-                          <input type="nome" id="nome" class="form-control"
-                            placeholder="Nome" />
+                          <input name="nome" id="nome" class="form-control"
+                            placeholder="Nome" value="${nome}"/>
                         </div>
                         <div class="form-outline mb-4">
-                            <input type="email" id="email" class="form-control"
-                              placeholder="Email" />
+                            <input name="email" type="email" id="email" class="form-control"
+                              placeholder="Email" value="${email}"/>
                           </div>
 
-                          <textarea name="mensagem" id="mensagem" cols="52" rows="4" placeholder="Insira sua mensagem aqui" style="border-radius: 5px"></textarea>                      
+                          <textarea name="mensagem" id="mensagem" cols="52" rows="4" placeholder="Insira sua mensagem aqui" value="${mensagem}" style="border-radius: 5px"></textarea>                      
       
                         <div class="text-center pt-1 mb-5 pb-1">
-                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="sumbit"> Enviar </button>
+                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit"> Enviar </button>
                         </div>
       
                       </form>

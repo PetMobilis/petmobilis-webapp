@@ -21,6 +21,11 @@ import jakarta.servlet.http.HttpServletResponse;
 public class CadastroServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        res.sendRedirect("cadastro.jsp");
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String nome = req.getParameter("nome");
         String sobrenome = req.getParameter("sobrenome");
