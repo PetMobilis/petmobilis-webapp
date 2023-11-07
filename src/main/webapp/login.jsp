@@ -9,104 +9,102 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Login</title>
     <style>
-        .button-spacing {
-            margin-right: 50px; 
-        }
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
 
-        body{
-          background-color:#5F6F52;
-        }
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #5F6F52, #A9B388,);
 
-        .btn1{
-          background-color: #C4661F;
-          border: 0;
-        }
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #5F6F52, #A9B388, #5F6F52);
+}
 
-        .btn{
-          background-color: #B99470;
-          border: 0;
-        }
-
-        .container{
-          margin-top: 5rem;
-        }
-
-        @media screen and (max-width: 600px){
-          .container{
-            margin: 0;
-          }
-        }
-
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
+}
     </style>
 </head>
 <body>
-   
-        <div class="container h-100">
+  
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-50">
           <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-12 col-xl-11">
-              <div class="card text-black" style="border-radius: 25px;background-color: #F9eBC7; border-color: #783D19;">
-                <div class="card-body p-md-5">
-                  <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-      
-                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-3">Login</p>
-
+            <div class="col-xl-10">
+              <div class="card rounded-3 text-black">
+                <div class="row g-0">
+                  <div class="col-lg-6">
+                    <div class="card-body mx-md-1 ml-4">
+                     
                       <c:if test="${erros != null}">
-                      <h3>Erros no formulário</h2>
-                        <ul>
-                        <c:forEach var="erro" items="${erros}">
-                          <li>${erro}</li>
-                        </c:forEach>
+                        <h3>Erros no formulário</h2>
+                          <ul>
+                          <c:forEach var="erro" items="${erros}">
+                            <li>${erro}</li>
+                          </c:forEach>
                         </ul>
-                        </c:if>
+                      </c:if>
       
-                      <form action="login" method="post" class="mx-1 mx-md-4 ">
+                      <form action="login" method="post">
+                        <p style="margin-bottom: 20px; margin-top:40px; text-align: center; font-size: large">Faça o login na sua conta</p>
       
-                        <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                          <div class="form-outline flex-fill mb-0">
-                            <input name="email" type="email" id="email'" class="form-control" placeholder="E-mail" value="${email}" />
+                        <div class="form-outline mb-4">
+                          <input name="email" type="email" id="email" class="form-control"
+                            placeholder="Email" />
+                        </div>
+      
+                        <div class="form-outline mb-4">
+                          <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" />
+                        </div>
+                      
+      
+                        <div class="text-center pt-1 mb-5 pb-1">
+
+                          <div class="form-check" style="display: inline; margin-right: 30px;">
+                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                            <label class="form-check-label" for="form1Example3"> Remember me </label>
                           </div>
-                        </div>
-      
-                        <div class="d-flex flex-row align-items-center mb-4">
-                          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                          <div class="form-outline flex-fill mb-0">
-                            <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="${senha}"/>
-                          </div>
-                        </div>
-                      <p class="text-center">
-                          <a href="recuperarSenha.html">Esqueceu sua senha?</a>
-                      </p>
-                        <div class="form-check d-flex justify-content-center mb-5">
-                          </label>
-                        </div>
-      
-                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                            <button type="submit" class="btn1 btn-primary btn-lg mb-3 button-spacing ml-5">Login</button>
-                            <a href="cadastro.html" class="btn btn-secondary btn-lg mb-3 button-spacing">Cadastrar-se</a>
-                        </div>
+
+                        <a class="text-muted" href="recuperarSenha.jsp">Esqueceu sua senha?</a>
+
+                        <a href="criarPerfil.html"><button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit">Entrar</button></a>
                         
+                        </div>
+      
+                        <div class="d-flex align-items-center justify-content-center pb-4">
+                          <p class="mb-0 me-2 mr-1">Ainda não possui uma conta?</p>
+                          <a href="cadastro.html"><button type="button" class="btn btn-outline-danger">Registrar</button></a>
+                        </div>
       
                       </form>
       
                     </div>
-                    
-                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center justify-content-center order-1 order-lg-2">
-                      <img src="imagens\logo.png"
-                           class="img-fluid" alt="Sample image" style="width: 80%;" />
                   </div>
-                  
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                    <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+
+                      <div class="text-center">
+                        <img src="imagens/logo.png"
+                          style="width: 300px" alt="logo" >
+                      </div>
+
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-       
-    
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
 </body>
 </html>

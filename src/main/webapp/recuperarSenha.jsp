@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Contato</title>
+    <title>Recuperar Senha</title>
     <style>
 .gradient-custom-2 {
 /* fallback for old browsers */
-background: #101967;
+background: #fccb90;
 
 /* Chrome 10-25, Safari 5.1-6 */
 background: -webkit-linear-gradient(to right, #5F6F52, #A9B388,);
@@ -31,13 +31,41 @@ border-top-right-radius: .3rem;
 border-bottom-right-radius: .3rem;
 }
 }
+
+@media screen and (max-width: 600px){
+
+body{
+  align-items: center;
+}
+.container{
+  margin: 0;
+}
+
+.img{
+  width: 50%;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.text-center{
+  margin-top: -20;
+}
+
+form{
+    align-items: center;
+    margin-right: 15px;
+    
+}
+
+}
+
     </style>
 </head>
 <body>
   
-    <section class="h-100 gradient-form" style="background-color: #eee;">
-        <div class="container py-5 h-50">
-          <div class="row d-flex justify-content-center align-items-center h-100">
+    <section class="h-100 gradient-form" style="background-color: #eee; ">
+        <div class="container py-4 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-50">
             <div class="col-xl-10">
               <div class="card rounded-3 text-black">
                 <div class="row g-0">
@@ -52,31 +80,30 @@ border-bottom-right-radius: .3rem;
                           </c:forEach>
                         </ul>
                       </c:if>
-
-                      <form action="contato" method="post">
-                        <p style="text-align: center; font-size: 25px" class="mensag mt-4 mb-4">Entre em contato conosco</p>
+                      
+                      <form action="recuperarSenha" method="post">
                         
-                        <div class="form-outline mb-4">
-                          <input name="nome" id="nome" class="form-control"
-                            placeholder="Nome" value="${nome}"/>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <input name="email" type="email" id="email" class="form-control"
-                              placeholder="Email" value="${email}"/>
-                          </div>
-
-                          <textarea name="mensagem" id="mensagem" cols="52" rows="4" placeholder="Insira sua mensagem aqui" value="${mensagem}" style="border-radius: 5px"></textarea>                      
+                        <p style="margin-bottom: 30px; margin-top:20px; text-align: center; font-size: 30px">Recuperar a senha</p>
       
-                        <div class="text-center pt-1 mb-5 pb-1">
-                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit"> Enviar </button>
+                        <p style="margin-bottom: 20px; margin-top:40px; text-align: justify; font-size: large">Para recuperar sua senha, informe seu endereço email para que enviemos um link para redefinição da senha</p>
+
+                        <div class="form-outline mb-3 mt-4">
+                          <input name="email" type="email" id="Email" class="form-control"
+                            placeholder="Email" />
+                        </div>
+      
+                        <div class="text-center">
+
+                          <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4 " type="submit">Enviar</button>
                           <a href="login.jsp"><button type="button" class="btn">Voltar para tela de login</button></a>
                         </div>
+    
       
                       </form>
       
                     </div>
                   </div>
-                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                  <div class="col-lg-6 d-flex align-items-center gradient-custom-2 cor">
                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
 
                       <div class="text-center">
