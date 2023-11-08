@@ -22,7 +22,7 @@ public class CadastroServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("cadastro.jsp");
+        req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
     }
 
     @Override
@@ -95,14 +95,14 @@ public class CadastroServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("login.jsp");
+            res.sendRedirect("WEB-INF/login.jsp");
         } else {
             req.setAttribute("nome", nome);
             req.setAttribute("sobrenome", sobrenome);
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
             req.setAttribute("erros", erros);
-            req.getRequestDispatcher("cadastro.jsp").forward(req, res);
+            req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
         }
     } 
     }

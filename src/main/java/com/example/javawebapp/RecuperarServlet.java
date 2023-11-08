@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class RecuperarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("recuperar.jsp");
+        req.getRequestDispatcher("WEB-INF/recuperar.jsp").forward(req, res);
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -37,10 +37,11 @@ public class RecuperarServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("login.jsp");
+            res.sendRedirect("WEB-INF/login.jsp");
         } else {
             req.setAttribute("email", email);
-            req.getRequestDispatcher("recuperar.jsp").forward(req, res);
+            req.setAttribute("erros", erros);
+            req.getRequestDispatcher("WEB-INF/recuperar.jsp").forward(req, res);
         }
     }
 

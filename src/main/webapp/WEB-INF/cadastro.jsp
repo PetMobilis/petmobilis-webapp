@@ -111,7 +111,7 @@ background-color: #B99470;
     
                       <div class="text-center">
                         <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4" type="submit">Criar</button>
-                        <a href="login.jsp"><button type="button" class="btn">Ir para tela de login</button></a>
+                        <a href="login"><button type="button" class="btn">Ir para tela de login</button></a>
                       </div>
                     </form>
                   </div>

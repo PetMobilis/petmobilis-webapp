@@ -70,7 +70,7 @@ background-color: #B99470;
                                         </div>
                                         <div class="text-center pt-1 mb-5 pb-1">
                                             <button class="btn btn-primary btn-block gradient-custom-2 mb-2 mt-4" type="submit">Enviar</button>
-                                            <a href="home.html"><button type="button" class="btn">Ir para tela inicial</button></a>
+                                            <a href="index.jsp"><button type="button" class="btn">Ir para tela inicial</button></a>
                                           </div>
                                     </form>
                                 </div>

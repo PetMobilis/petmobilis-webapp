@@ -22,7 +22,7 @@ public class ContatoServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("contato.jsp");
+        req.getRequestDispatcher("WEB-INF/contato.jsp").forward(req, res);
     }
 
     @Override
@@ -42,13 +42,13 @@ public class ContatoServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("contato.jsp");
+            res.sendRedirect("WEB-INF/contato.jsp");
         } else {
             req.setAttribute("nome", nome);
             req.setAttribute("email", email);
             req.setAttribute("mensagem", mensagem);
             req.setAttribute("erros", erros);
-            req.getRequestDispatcher("contato.jsp").forward(req, res);
+            req.getRequestDispatcher("WEB-INF/contato.jsp").forward(req, res);
         }
     }
 

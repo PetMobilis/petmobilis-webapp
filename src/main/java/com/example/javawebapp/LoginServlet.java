@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("login.jsp");
+        req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
     }
 
     @Override
@@ -47,12 +47,12 @@ public class LoginServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("home.html");
+            res.sendRedirect("index.jsp");
         } else {
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
             req.setAttribute("erros", erros);
-            req.getRequestDispatcher("login.jsp").forward(req, res);
+            req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
         }
     }
 }

@@ -73,7 +73,7 @@ border-bottom-right-radius: .3rem;
                             <label class="form-check-label" for="form1Example3"> Remember me </label>
                           </div>
 
-                        <a class="text-muted" href="recuperarSenha.jsp">Esqueceu sua senha?</a>
+                        <a class="text-muted" href="recuperar">Esqueceu sua senha?</a>
 
                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit">Entrar</button>
                         
@@ -81,7 +81,7 @@ border-bottom-right-radius: .3rem;
       
                         <div class="d-flex align-items-center justify-content-center pb-4">
                           <p class="mb-0 me-2 mr-1">Ainda não possui uma conta?</p>
-                          <a href="cadastro.jsp"><button type="button" class="btn btn-outline-danger">Registrar</button></a>
+                          <a href="cadastro"><button type="button" class="btn btn-outline-danger">Registrar</button></a>
                         </div>
       
                       </form>
