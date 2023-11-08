@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,51 +7,88 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Termos de Serviço</title>
     <style>
-        body{
-          background-color:#5F6F52;
-        }
+.gradient-form{
+    background-color: #5F6F52;
+}
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
 
-        .btn1{
-          background-color: #C4661F;
-          border: 0;
-        }
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #5F6F52, #A9B388,);
 
-        .btn{
-          background-color: #B99470;
-          border: 0;
-        }
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #5F6F52, #A9B388, #5F6F52);
+}
 
-        .container{
-          margin-top: 5rem;
-        }
-
-        @media screen and (max-width: 600px){
-          .container{
-            margin: 0;
-          }
-        }
-        
-.lorem{
-    text-align: center;
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
 }
     </style>
 </head>
-<body>
-        <div class="container h-100">
+<body style="background-color: #eee;">
+  <section class="h-200 gradient-form" style="background-color: #eee;">
+    
+        <div class="py-4">
           <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-lg-12 col-xl-11">
-              <div class="card text-black" style="border-radius: 25px;background-color: #F9eBC7; border-color: #783D19;">
-                <div class="card-body p-md-5">
-                  <div class="row justify-content-center">
-                    <div class="col-md-10 col-lg-6 col-xl-10 order-2 order-lg-1">
-      
-                      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-10 mt-4">Termos de Serviço</p>
-                      <p class="lorem h5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi tenetur praesentium quia nulla libero sunt eligendi omnis est? Adipisci exercitationem cupiditate consectetur omnis distinctio, eveniet repudiandae laborum nemo id quae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente ab veritatis aliquid rem ipsam nobis impedit. Id dolorum eos dolore in iusto! In nobis minus blanditiis non! Eaque, quae accusamus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, distinctio repudiandae officia quis corrupti iusto possimus minima nulla autem accusantium a ipsa sequi omnis, tempora, nam dolorem earum quibusdam asperiores.
+            <div class="col-xl-10">
+              <div class="card align-items-center rounded-3 text-black">
+                <div class="">
+                  <div class="">
+                    <div class="card-body mx-md-1 ml-4">
+                      
+                      <section style="background-color:#A9B388; border-radius: 1rem; margin-bottom: 2rem;">
+                        <div class="text-center mt-0">
+                          <img src="imagens/default_transparent_1000x1000.png"
+                            style="width: 150px; padding: 15px;" alt="logo" >
+                        </div>
+                      </section>
+                      <ul style="font-size: 17px;">
+                        <li> <b>Reservas e Pagamentos</b> 
+                          <br>
+                          - Todas as reservas estão sujeitas à disponibilidade. <br>
+                          - O pagamento deve ser feito antecipadamente e é não reembolsável em caso de cancelamento, a menos que seja feito com um aviso prévio de 24 horas.</li>
+                      <br><li>
+                        <b>Responsabilidades do Cliente</b> 
+                          <br>
+                          - O cliente é responsável por garantir que o animal de estimação esteja pronto para o transporte no horário agendado.<br>
+                          - O cliente deve fornecer informações precisas sobre o animal de estimação, incluindo quaisquer requisitos.
+                      </li>
 
-                      </p>
+                      <br><li>
+                        <b>Segurança e Comportamento</b> 
+                          <br>
+                          - O animal de estimação deve estar contido em uma caixa de transporte apropriada durante todo o trajeto.<br>
+                          - A empresa se reserva o direito de recusar o transporte de animais de estimação agressivos ou que representem uma ameaça à segurança dos motoristas ou outros passageiros.
+                      </li>
+
+                      <br><li>
+                        <b>Alterações no Serviço</b> 
+                          <br>
+                          - A empresa reserva-se o direito de cancelar ou alterar qualquer reserva por razões de segurança ou circunstâncias imprevistas.
+                        </li>
+                      
+                      <br><li>
+                        <b>Limitação de Responsabilidade</b> 
+                          <br>
+                          - A empresa não será responsável por danos ou lesões causados pelo animal de estimação durante o transporte.
+                      </li>
+                        </ul>
       
+                        <p style="font-size: 18px;">
+                          <br><b>Ao utilizar nosso serviço de transporte de animais de estimação, você concorda com estes termos e condições.</b> <br><br>
+
+                          <p style="color:#C4661F; font-size: 19px;text-align: center;">Obrigado por escolher nossos serviços para o transporte do seu animal de estimação!</p>
+                        </p>
                     </div>
-                   
                   </div>
                 </div>
               </div>
@@ -59,5 +97,6 @@
         </div>
       </section>
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
+</body>
+</html>

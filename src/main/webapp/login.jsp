@@ -75,13 +75,13 @@ border-bottom-right-radius: .3rem;
 
                         <a class="text-muted" href="recuperarSenha.jsp">Esqueceu sua senha?</a>
 
-                        <a href="criarPerfil.html"><button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit">Entrar</button></a>
+                       <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit">Entrar</button>
                         
                         </div>
       
                         <div class="d-flex align-items-center justify-content-center pb-4">
                           <p class="mb-0 me-2 mr-1">Ainda não possui uma conta?</p>
-                          <a href="cadastro.html"><button type="button" class="btn btn-outline-danger">Registrar</button></a>
+                          <a href="cadastro.jsp"><button type="button" class="btn btn-outline-danger">Registrar</button></a>
                         </div>
       
                       </form>

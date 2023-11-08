@@ -81,7 +81,7 @@ form{
                         </ul>
                       </c:if>
                       
-                      <form action="recuperarSenha" method="post">
+                      <form action="recuperar" method="post">
                         
                         <p style="margin-bottom: 30px; margin-top:20px; text-align: center; font-size: 30px">Recuperar a senha</p>
       
@@ -89,7 +89,7 @@ form{
 
                         <div class="form-outline mb-3 mt-4">
                           <input name="email" type="email" id="Email" class="form-control"
-                            placeholder="Email" />
+                            placeholder="Email" value="${email}"/>
                         </div>
       
                         <div class="text-center">

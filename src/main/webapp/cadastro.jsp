@@ -9,8 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Cadastro</title>
-</head>
-<style>
+    <style>
 .gradient-custom-2 {
 /* fallback for old browsers */
 background: #fccb90;
@@ -19,7 +18,7 @@ background: #fccb90;
 background: -webkit-linear-gradient(to right, #5F6F52, #A9B388,);
 
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, #5F6F52, #A9B388, #5F6F52);
+background: radial-gradient(circle, rgba(169,179,136,1) 0%, rgba(95,111,82,1) 100%);
 }
 
 @media (min-width: 768px) {
@@ -60,15 +59,18 @@ form{
 }
 
 }
+.btn:hover{
+background-color: #B99470;
+}
 
-</style>
+    </style>
 </head>
-<body>
-  
-  <section class="h-100 gradient-form" style="background-color: #eee;">
-      <div class="container py-5 h-50">
+<body style="background-color: #eee;">
+
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+      <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-xl-10">
+          <div class="col-lg-10">
             <div class="card rounded-3 text-black">
               <div class="row g-0">
                 <div class="col-lg-6">
@@ -84,52 +86,41 @@ form{
                     </c:if>
                     
                     <form action="cadastro" method="post">
-                      <p style="margin-bottom: 30px; margin-top:20px; text-align: center; font-size: 30px">Crie seu cadastro</p>
+                      <h2 class="text-center">Crie seu cadastro</h2>
     
-                      <div class="row">
+                      <div class="form-group row">
                           <div class="col">
-                            <input name="nome" type="text" class="form-control" id="nome" placeholder="Nome" value="${nome}">
+                            <input name="nome" type="text" class="form-control" placeholder="Nome" value="${nome}">
                           </div>
-
                           <div class="col">
-                            <input name="sobrenome" type="text" class="form-control" id="sobrenome" placeholder="Sobrenome" value="${sobrenome}">
+                            <input name="sobrenome" type="text" class="form-control" placeholder="Sobrenome" value="${sobrenome}">
                           </div>
-                        </div>
-                      
-                      <div class="form-outline mb-4 mt-4">
-                        <input name="email" type="email" id="email" class="form-control" id="email"
-                          placeholder="Email" value="${email}"/>
-                      </div>
-    
-                      <div class="form-outline mb-2">
-                        <input name="senha" type="password" id="senha" class="form-control" id="senha" placeholder="Senha" value="${senha}"/>
                       </div>
                       
+                      <div class="form-group">
+                        <input name="email" type="email" id="Email" class="form-control" placeholder="Email" value="${email}"/>
+                      </div>
+    
+                      <div class="form-group">
+                        <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="${senha}"/>
+                      </div>
                       
-                          <li style="font-size: 12px; margin-bottom: 30px;">A senha deve possuir pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere</li>
-                      
-
+                      <p style="font-size: 12px;">A senha deve possuir pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere</p>
+    
                       <p style="font-size: 12px;">Ao clicar em Registrar-se, você aceita nosso <a href="termosDeServico.html">Termos de Serviço</a></p>
     
                       <div class="text-center">
-
-                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4 " type="submit">Registrar-se</button>
-                        <a href="login.html"><button type="button" class="btn">Ir para tela de login</button></a>
+                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4" type="submit">Criar</button>
+                        <a href="login.jsp"><button type="button" class="btn">Ir para tela de login</button></a>
                       </div>
-  
-    
                     </form>
-    
                   </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2 cor">
                   <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-
                     <div class="text-center">
-                      <img src="imagens/logo.png"
-                        style="width: 300px" alt="logo" >
+                      <img src="imagens/logo.png" style="max-width: 100%;" alt="logo">
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -137,10 +128,8 @@ form{
           </div>
         </div>
       </div>
-    </section>
+      </section>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"> </script>
 </body>
 </html>

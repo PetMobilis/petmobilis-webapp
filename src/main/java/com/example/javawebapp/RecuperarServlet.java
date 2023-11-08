@@ -17,11 +17,11 @@ import jakarta.servlet.http.HttpServletResponse;
 // 4. sobreescrever os métodos do???  doGet, doPost, doDelete, etc
 // e definir o comportamento
 
-@WebServlet(name = "recuperarSenha", value = "/recuperarSenha")
-public class RecuperarSenhaServlet extends HttpServlet {
+@WebServlet(name = "recuperar", value = "/recuperar")
+public class RecuperarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        res.sendRedirect("recuperarSenha.jsp");
+        res.sendRedirect("recuperar.jsp");
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -37,10 +37,10 @@ public class RecuperarSenhaServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("home.html");
+            res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("email", email);
-            req.getRequestDispatcher("recuperarSenha.jsp").forward(req, res);
+            req.getRequestDispatcher("recuperar.jsp").forward(req, res);
         }
     }
 
