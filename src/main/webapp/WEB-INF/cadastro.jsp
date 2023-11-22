@@ -76,7 +76,8 @@ background-color: #B99470;
                 <div class="col-lg-6">
                   <div class="card-body mx-md-1 ml-4">
     
-                    <c:if test="${violations != null}">
+                    
+                  <c:if test="${violations != null}">
                       <h3>
                           <fmt:message key="cadastro.message" />
                           </h2>

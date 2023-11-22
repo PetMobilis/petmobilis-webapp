@@ -7,7 +7,6 @@ import java.util.Set;
 import com.example.javawebapp.forms.CadastroForm;
 import com.example.javawebapp.validators.ValidatorUtil;
 
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,7 +21,6 @@ import jakarta.validation.ConstraintViolation;
 // name e value
 // 4. sobreescrever os métodos do???  doGet, doPost, doDelete, etc
 // e definir o comportamento
-
 @WebServlet(name = "cadastro", value = "/cadastro")
 public class CadastroServlet extends HttpServlet {
 
@@ -37,26 +35,26 @@ public class CadastroServlet extends HttpServlet {
         String sobrenome = req.getParameter("sobrenome");
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
-       
+
         CadastroForm cadastroForm = new CadastroForm(nome, sobrenome, email, senha);
 
         Set<ConstraintViolation<CadastroForm>> violations = ValidatorUtil.validateObject(cadastroForm);
 
-        if (violations.isEmpty()) {
-            if (violations.isEmpty()) {
-                if (UsuarioDao.existeComEmail(email)) {
-                    // mandar erro na tela
-                    req.setAttribute("existeErro", "Já existe um usuário com esse e-mail");
-                    req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
-                } else {
-                    UsuarioDao.cadastrar(nome, sobrenome, email, senha);
-                    res.sendRedirect("WEB-INF/login.jsp");
-                }
-        } else {
+        if (!violations.isEmpty()) {
+            // Existe violação de validação
             req.setAttribute("cadastroForm", cadastroForm);
             req.setAttribute("violations", violations);
             req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
-        }
+        } else {
+            if (UsuarioDao.existeComEmail(email)) {
+                // E-mail já existe, enviar erro para a tela
+                req.setAttribute("existeErro", "Já existe um usuário com esse e-mail");
+                req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
+            } else {
+                // Cadastrar o usuário
+                UsuarioDao.cadastrar(nome, sobrenome, email, senha);
+                res.sendRedirect("WEB-INF/login.jsp");
+            }
     } 
     }
 }
