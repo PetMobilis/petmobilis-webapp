@@ -78,12 +78,13 @@ background-color: #B99470;
     
                     <c:if test="${violations != null}">
                       <h3>
-                        <fmt:message key="cadastro.message" />
-                      </h3>
-                      <ul>
-                          <c:forEach var="violation" items="${violations}">
-                              <li>${violation.propertyPath} ${violation.message}</li>
-                          </c:forEach>
+                          <fmt:message key="cadastro.message" />
+                          </h2>
+                          <ul>
+                              <c:forEach var="violation" items="${violations}">
+                                  <li>${violation.propertyPath} ${violation.message}</li>
+                              </c:forEach>
+                          </ul>
                   </c:if>
                     
                     <form action="cadastro" method="post">
