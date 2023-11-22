@@ -1,14 +1,20 @@
 package com.example.javawebapp;
 
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
+
+import java.util.Set;
+
+import com.example.javawebapp.forms.LoginForm;
+import com.example.javawebapp.validators.ValidatorUtil;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.ConstraintViolation;
 
 // 1. criar uma classe em java
 // 2. extends HttpServlet
@@ -32,26 +38,15 @@ public class LoginServlet extends HttpServlet {
         // salvar no banco de dados
         // enviar um email para o admin com a mensagem
 
-        final List<String> erros = new ArrayList<>();
-        
-        if (email == null || email.isBlank()) {
-            erros.add("E-mail não pode ser vazio");
-        }
+        LoginForm loginForm = new LoginForm(email, senha);
+        Set<ConstraintViolation<LoginForm>> violations =  ValidatorUtil.validateObject(loginForm);
 
-        if (senha == null || senha.isEmpty()) {
-            erros.add("Senha não pode ser vazia");
-        }
-
-        if (email != null && !EmailValidator.isValid(email)) {
-            erros.add("E-mail inválido");
-        }
-
-        if (erros.isEmpty()) {
+       if (violations.isEmpty()) {
             res.sendRedirect("index.jsp");
         } else {
-            req.setAttribute("email", email);
+            req.setAttribute("senha", email);
             req.setAttribute("senha", senha);
-            req.setAttribute("erros", erros);
+            req.setAttribute("violations", violations);
             req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
         }
     }
