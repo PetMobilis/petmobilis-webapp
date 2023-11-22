@@ -93,19 +93,19 @@ background-color: #B99470;
                       <div class="form-group row">
                           <div class="col">
                             <input 
-                             name="nome" type="text" class="form-control" value="${nome}" placeholder="<fmt:message key="cadastro.name" />">
+                             name="nome" type="text" class="form-control" value="${CadastroForm.nome}" placeholder="<fmt:message key="cadastro.name" />">
                           </div>
                           <div class="col">
-                            <input name="sobrenome" type="text" class="form-control" value="${sobrenome}" placeholder="<fmt:message key="cadastro.surname" />">
+                            <input name="sobrenome" type="text" class="form-control" value="${CadastroForm.sobrenome}" placeholder="<fmt:message key="cadastro.surname" />">
                           </div>
                       </div>
                       
                       <div class="form-group">
-                        <input name="email" type="email" id="Email" class="form-control" value="${email}" placeholder="<fmt:message key="cadastro.email" />"/>
+                        <input name="email" type="email" id="Email" class="form-control" value="${CadastroForm.email}" placeholder="<fmt:message key="cadastro.email" />"/>
                       </div>
     
                       <div class="form-group">
-                        <input name="senha" type="password" id="senha" class="form-control" value="${senha}" placeholder="<fmt:message key="cadastro.password" />"/>
+                        <input name="senha" type="password" id="senha" class="form-control" value="${CadastroForm.senha}" placeholder="<fmt:message key="cadastro.password" />"/>
                       </div>
                       
                       <p style="font-size: 12px;"><fmt:message key="cadastro.important" /></p>
