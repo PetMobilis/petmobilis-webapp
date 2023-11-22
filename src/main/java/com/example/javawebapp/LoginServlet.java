@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import java.util.Set;
 
+import com.example.javawebapp.usuario.UsuarioDao;
 import com.example.javawebapp.forms.LoginForm;
 import com.example.javawebapp.validators.ValidatorUtil;
 
@@ -14,6 +15,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.ConstraintViolation;
 
 // 1. criar uma classe em java
@@ -42,8 +44,16 @@ public class LoginServlet extends HttpServlet {
         Set<ConstraintViolation<LoginForm>> violations =  ValidatorUtil.validateObject(loginForm);
 
        if (violations.isEmpty()) {
-            res.sendRedirect("index.jsp");
+        
+        if (UsuarioDao.login(email, senha)) {
+        HttpSession session = req.getSession();
+        session.setAttribute("emailUsuario", email);
+        res.sendRedirect("index.jsp");
         } else {
+        req.setAttribute("errorLogin", "E-mail ou senha incorretos");
+        req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
+        }
+    } else {
             req.setAttribute("senha", email);
             req.setAttribute("senha", senha);
             req.setAttribute("violations", violations);
@@ -51,3 +61,4 @@ public class LoginServlet extends HttpServlet {
         }
     }
 }
+

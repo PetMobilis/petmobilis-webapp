@@ -1,5 +1,6 @@
 package com.example.javawebapp;
 
+import com.example.javawebapp.usuario.UsuarioDao;
 import java.io.IOException;
 import java.util.Set;
 
@@ -42,7 +43,15 @@ public class CadastroServlet extends HttpServlet {
         Set<ConstraintViolation<CadastroForm>> violations = ValidatorUtil.validateObject(cadastroForm);
 
         if (violations.isEmpty()) {
-            res.sendRedirect("WEB-INF/login.jsp");
+            if (violations.isEmpty()) {
+                if (UsuarioDao.existeComEmail(email)) {
+                    // mandar erro na tela
+                    req.setAttribute("existeErro", "Já existe um usuário com esse e-mail");
+                    req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
+                } else {
+                    UsuarioDao.cadastrar(nome, sobrenome, email, senha);
+                    res.sendRedirect("WEB-INF/login.jsp");
+                }
         } else {
             req.setAttribute("cadastroForm", cadastroForm);
             req.setAttribute("violations", violations);
@@ -50,3 +59,4 @@ public class CadastroServlet extends HttpServlet {
         }
     } 
     }
+}
