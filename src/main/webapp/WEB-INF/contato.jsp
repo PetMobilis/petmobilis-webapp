@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Contato</title>
+    <title><fmt:message key="contato.title" /></title>
     <style>
         .gradient-custom-2 {
             /* fallback for old browsers */
@@ -49,7 +51,7 @@ background-color: #B99470;
                                 <div class="card-body mx-md-4">
 
                                   <c:if test="${erros != null}">
-                                   <h3>Erros no formulário</h2>
+                                   <h3><fmt:message key="contato.message" /></h2>
                                       <ul>
                                       <c:forEach var="erro" items="${erros}">
                                         <li>${erro}</li>
@@ -58,19 +60,19 @@ background-color: #B99470;
                                   </c:if>
 
                                     <form action="contato" method="post">
-                                        <h2 class="text-center mt-4 mb-4">Entre em contato conosco</h2>
+                                        <h2 class="text-center mt-4 mb-4"><fmt:message key="contato.title2" /></h2>
                                         <div class="form-group">
-                                            <input name="nome" type="text" class="form-control" placeholder="Nome" value="${nome}">
+                                            <input name="nome" type="text" class="form-control" value="${nome}" placeholder="<fmt:message key="contato.name" />">
                                         </div>
                                         <div class="form-group">
-                                            <input name="email" type="email" class="form-control" placeholder="Email" value="${email}">
+                                            <input name="email" type="email" class="form-control" value="${email}" placeholder="<fmt:message key="contato.email" />">
                                         </div>
                                         <div class="form-group">
-                                            <textarea name="mensagem" class="form-control" rows="4" placeholder="Insira sua mensagem aqui" value="${mensagem}" style="border-radius: 5px"></textarea>
+                                            <textarea name="mensagem" class="form-control" rows="4" value="${mensagem}" style="border-radius: 5px" placeholder="<fmt:message key="contato.message2" />"></textarea>
                                         </div>
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block gradient-custom-2 mb-2 mt-4" type="submit">Enviar</button>
-                                            <a href="index.jsp"><button type="button" class="btn">Ir para tela inicial</button></a>
+                                            <button class="btn btn-primary btn-block gradient-custom-2 mb-2 mt-4" type="submit"><fmt:message key="contato.enter" /></button>
+                                            <a href="index.jsp"><button type="button" class="btn"><fmt:message key="contato.h_button" /></button></a>
                                           </div>
                                     </form>
                                 </div>

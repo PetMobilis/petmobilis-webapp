@@ -1,5 +1,4 @@
 package com.example.javawebapp;
-import com.example.javawebapp.validators.EmailValidator;
 
 import java.io.IOException;
 import java.util.Set;

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Cadastro</title>
+    <title><fmt:message key="cadastro.title" /></title>
     <style>
 .gradient-custom-2 {
 /* fallback for old browsers */
@@ -76,42 +76,44 @@ background-color: #B99470;
                 <div class="col-lg-6">
                   <div class="card-body mx-md-1 ml-4">
     
-                    <c:if test="${erros != null}">
-                      <h3>Erros no formulário</h2>
-                        <ul>
-                        <c:forEach var="erro" items="${erros}">
-                          <li>${erro}</li>
-                        </c:forEach>
-                      </ul>
-                    </c:if>
+                    <c:if test="${violations != null}">
+                      <h3>
+                        <fmt:message key="cadastro.message" />
+                      </h3>
+                      <ul>
+                          <c:forEach var="violation" items="${violations}">
+                              <li>${violation.propertyPath} ${violation.message}</li>
+                          </c:forEach>
+                  </c:if>
                     
                     <form action="cadastro" method="post">
-                      <h2 class="text-center">Crie seu cadastro</h2>
+                      <h2 class="text-center"><fmt:message key="cadastro.title2" /></h2>
     
                       <div class="form-group row">
                           <div class="col">
-                            <input name="nome" type="text" class="form-control" placeholder="Nome" value="${nome}">
+                            <input 
+                             name="nome" type="text" class="form-control" value="${nome}" placeholder="<fmt:message key="cadastro.name" />">
                           </div>
                           <div class="col">
-                            <input name="sobrenome" type="text" class="form-control" placeholder="Sobrenome" value="${sobrenome}">
+                            <input name="sobrenome" type="text" class="form-control" value="${sobrenome}" placeholder="<fmt:message key="cadastro.surname" />">
                           </div>
                       </div>
                       
                       <div class="form-group">
-                        <input name="email" type="email" id="Email" class="form-control" placeholder="Email" value="${email}"/>
+                        <input name="email" type="email" id="Email" class="form-control" value="${email}" placeholder="<fmt:message key="cadastro.email" />"/>
                       </div>
     
                       <div class="form-group">
-                        <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" value="${senha}"/>
+                        <input name="senha" type="password" id="senha" class="form-control" value="${senha}" placeholder="<fmt:message key="cadastro.password" />"/>
                       </div>
                       
-                      <p style="font-size: 12px;">A senha deve possuir pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere</p>
+                      <p style="font-size: 12px;"><fmt:message key="cadastro.important" /></p>
     
-                      <p style="font-size: 12px;">Ao clicar em Registrar-se, você aceita nosso <a href="termosDeServico.html">Termos de Serviço</a></p>
+                      <p style="font-size: 12px;"><fmt:message key="cadastro.accept" /><a href="termosDeServico.html"><fmt:message key="cadastro.accept2" /></a></p>
     
                       <div class="text-center">
-                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4" type="submit">Criar</button>
-                        <a href="login"><button type="button" class="btn">Ir para tela de login</button></a>
+                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-4" type="submit"><fmt:message key="cadastro.s_button" /></button>
+                        <a href="login"><button type="button" class="btn"><fmt:message key="cadastro.l_button" /></button></a>
                       </div>
                     </form>
                   </div>

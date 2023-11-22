@@ -1,5 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Login</title>
+    <title><fmt:message key="login.title" /></title>
     <style>
 .gradient-custom-2 {
 /* fallback for old browsers */
@@ -44,25 +46,26 @@ border-bottom-right-radius: .3rem;
                   <div class="col-lg-6">
                     <div class="card-body mx-md-1 ml-4">
                      
-                      <c:if test="${erros != null}">
-                        <h3>Erros no formulário</h2>
-                          <ul>
-                          <c:forEach var="erro" items="${erros}">
-                            <li>${erro}</li>
-                          </c:forEach>
-                        </ul>
-                      </c:if>
+                      <c:if test="${violations != null}">
+                        <h3>
+                            <fmt:message key="login.message" />
+                            </h2>
+                            <ul>
+                                <c:forEach var="violation" items="${violations}">
+                                    <li>${violation.propertyPath} ${violation.message}</li>
+                                </c:forEach>
+                            </ul>
+                    </c:if>
       
                       <form action="login" method="post">
-                        <p style="margin-bottom: 20px; margin-top:40px; text-align: center; font-size: large">Faça o login na sua conta</p>
+                        <p style="margin-bottom: 20px; margin-top:40px; text-align: center; font-size: large"><fmt:message key="login.title2" /></p>
       
                         <div class="form-outline mb-4">
-                          <input name="email" type="email" id="email" class="form-control"
-                            placeholder="Email" />
+                          <input name="email" type="email" id="email" class="form-control" value="${email}" placeholder="<fmt:message key="login.email" />" />
                         </div>
       
                         <div class="form-outline mb-4">
-                          <input name="senha" type="password" id="senha" class="form-control" placeholder="Senha" />
+                          <input name="senha" type="password" id="senha" class="form-control" value="${senha}" placeholder="<fmt:message key="login.password" />" />
                         </div>
                       
       
@@ -70,18 +73,18 @@ border-bottom-right-radius: .3rem;
 
                           <div class="form-check" style="display: inline; margin-right: 30px;">
                             <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                            <label class="form-check-label" for="form1Example3"> Remember me </label>
+                            <label class="form-check-label" for="form1Example3"><fmt:message key="login.checked" /></label>
                           </div>
 
-                        <a class="text-muted" href="recuperar">Esqueceu sua senha?</a>
+                        <a class="text-muted" href="recuperar"><fmt:message key="login.forget" /></a>
 
-                       <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit">Entrar</button>
+                       <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-2 mt-4" type="submit"><fmt:message key="login.enter" /></button>
                         
                         </div>
       
                         <div class="d-flex align-items-center justify-content-center pb-4">
-                          <p class="mb-0 me-2 mr-1">Ainda não possui uma conta?</p>
-                          <a href="cadastro"><button type="button" class="btn btn-outline-danger">Registrar</button></a>
+                          <p class="mb-0 me-2 mr-1"><fmt:message key="login.c_message" /></p>
+                          <a href="cadastro"><button type="button" class="btn btn-outline-danger"><fmt:message key="login.c_button" /></button></a>
                         </div>
       
                       </form>
