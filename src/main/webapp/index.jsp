@@ -50,6 +50,7 @@ body {
             <a class="p-2 text-dark" href="contato">Contato</a>
             <a class="botao1 btn btn-outline-primary mr-2" href="cadastro">Cadastrar</a>
             <a class="botao2 btn btn-outline-primary" href="login">Login</a>
+            <a class="botao2 btn btn-outline-primary" href="logout">Logout</a>
         </nav>
     </div>
     <div class="container">
